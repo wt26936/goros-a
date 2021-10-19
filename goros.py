@@ -5,7 +5,6 @@ import datetime
 import os
 
 # Заготовки для трёх предложений
-
 def loadList():
 	with open('first.txt', 'r', encoding='utf-8') as file:
 		first = file.readlines()
@@ -16,7 +15,6 @@ def loadList():
 	with open('third.txt', 'r', encoding='utf-8') as file:
 		third = file.readlines()
 	return first, second, second_add, third
-	
 
 def gorlist(took):
 	znak = ['Овен','Телец','Близнецы','Рак','Лев','Дева','Весы','Скорпион','Стрелец','Козерог','Водолей','Рыбы']
@@ -38,7 +36,6 @@ def gorlist(took):
 	print('*****************************************\n', msg, '\n*****************************************\n')
 
 def printMenu():
-
 	print(
 		'\n'
 		'Введите номер знака Зодиака и нажмите Enter:\n'
@@ -75,41 +72,6 @@ def main():
 			None
 		else:
 			print('Не понимаю запрос.\n')
-			
-def game_save(board, count_move, timeGameTotal):
-	json_data = json.dumps({'board':board, 'count_move':count_move, 'timeGameTotal':timeGameTotal})
-	file = open('savegame.txt', 'w')
-	file.write(json_data)
-	file.close()
-	#print('Игра сохранена.')
 
-def game_restore():
-	''' third '''
-	file = open('savegame.txt', 'r', encoding='cp1251')
-	
-	with open('savegame.txt', 'r', encoding='cp1251') as file:
-		spisokf = file.readlines()
-	
-	'''
-	try:
-		spisokf = file.readlines()
-	finally:
-		file.close()
-		print('File close.')
-	'''
-	return spisokf
-	
-	
-	
-	print(spisokf)
-	#json_data = file.read()
-	#file.close()
-	#data = json.loads(json_data)
-	
-	#return board, count_move, timeGameTotalTemp			
-			
-			
-	
-	
 if __name__ == '__main__':
 	main()
